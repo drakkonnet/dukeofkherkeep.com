@@ -1,0 +1,30 @@
+# Example Terraform variables file
+# Copy to terraform.tfvars and fill in actual values
+
+aws_region = "us-east-1"
+environment = "production"
+domain_name = "dukeofkherkeep.com"
+
+# Get your AWS Account ID with: aws sts get-caller-identity --query Account --output text
+account_id = "YOUR_ACCOUNT_ID"
+
+# Cloudflare API Token: https://dash.cloudflare.com/profile/api-tokens
+# Required permissions: Zone.Zone, Zone.DNS, Zone.Access (for DNS records)
+cloudflare_api_token = "YOUR_CLOUDFLARE_API_TOKEN"
+
+# Get Cloudflare Zone ID: https://dash.cloudflare.com/
+cloudflare_zone_id = "YOUR_CLOUDFLARE_ZONE_ID"
+
+# ARN of ACM certificate (must be in us-east-1 for CloudFront)
+# Create with: aws acm request-certificate --domain-name dukeofkherkeep.com --validation-method DNS
+acm_certificate_arn = "YOUR_ACM_CERTIFICATE_ARN"
+
+# Admin credentials for basic auth (change these!)
+admin_username = "admin"
+admin_password = "change-me"
+
+# Set to true to create Route53 DNS records (if using Route53)
+create_route53_records = false
+
+# Enable API Gateway for /portfolio routes
+enable_api_gateway = true
